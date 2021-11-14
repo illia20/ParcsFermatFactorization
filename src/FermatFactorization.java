@@ -15,10 +15,11 @@ public class FermatFactorization implements AM {
             return x;
         }
 
-        BigInteger two = BigInteger.valueOf(2L);
-        BigInteger y;
+        BigInteger two = BigInteger.TWO;
+        BigInteger y = x.divide(two);
 
-        for (y = x.divide(two); y.compareTo(x.divide(y)) > 0; y = ((x.divide(y)).add(y)).divide(two));
+        while (y.compareTo(x.divide(y)) > 0)
+             y = ((x.divide(y)).add(y)).divide(two);
 
         if (x.compareTo(y.multiply(y)) == 0) {
             return y;
