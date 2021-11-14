@@ -66,11 +66,11 @@ public class FermatFactorization implements AM {
             BigInteger divisor = FermatFactor(N);
             point p = amInfo.createPoint();
             channel c = p.createChannel();
-            p.execute("TheAlgorithm");
+            p.execute("FermatFactorization");
             c.write(divisor.toString());
             point p1 = amInfo.createPoint();
             channel c1 = p1.createChannel();
-            p1.execute("TheAlgorithm");
+            p1.execute("FermatFactorization");
             c1.write(N.divide(divisor).toString());
             Result result1 = (Result) (c.readObject());
             Result result2 = (Result) (c1.readObject());
