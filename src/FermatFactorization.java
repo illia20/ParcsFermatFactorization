@@ -18,7 +18,7 @@ public class FermatFactorization implements AM {
         BigInteger two = BigInteger.TWO;
         BigInteger y = x.divide(two);
 
-        while (y.compareTo(x.divide(y)) > 0)
+        while (y.compareTo(BigInteger.ZERO) > 0 && y.compareTo(x.divide(y)) > 0)
              y = ((x.divide(y)).add(y)).divide(two);
 
         if (x.compareTo(y.multiply(y)) == 0) {
